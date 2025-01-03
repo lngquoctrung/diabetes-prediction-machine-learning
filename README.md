@@ -1,4 +1,4 @@
-# Dự án Dự đoán Bệnh Tiểu đường
+# Dự đoán Bệnh Tiểu đường bằng Machine Learning
 
 ## Giới thiệu
 
