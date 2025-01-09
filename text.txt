@@ -1,0 +1,62 @@
+import joblib
+import os
+
+# Tạo thư mục để lưu các model nếu chưa tồn tại
+if not os.path.exists('models'):
+    os.makedirs('models')
+
+# Lưu các models từ SMOTE
+joblib.dump(smote_random_forest_model, './models/smote_rf_model.joblib')
+joblib.dump(smote_knn_model, './models/smote_knn_model.joblib')
+joblib.dump(smote_mlp_model, './models/smote_mlp_model.joblib')
+
+# Lưu model với best parameters từ mục 7
+joblib.dump(best_rf_model, './models/best_rf_model.joblib')
+
+# Lưu scaler
+joblib.dump(smote_min_max_scaler, './models/smote_scaler.joblib')
+
+# Nên lưu thêm các thông tin về features đã chọn
+selected_features = high_corr_features.copy()
+selected_features.remove('Diabetes_012')  # Loại bỏ cột target
+joblib.dump(selected_features, './models/selected_features.joblib')
+
+print("Đã lưu các models và scaler thành công!")
+
+# Cách load lại các models và scaler (cho file khác):
+'''
+import joblib
+
+# Load models
+smote_rf_model = joblib.load('./models/smote_rf_model.joblib')
+smote_knn_model = joblib.load('./models/smote_knn_model.joblib')
+smote_mlp_model = joblib.load('./models/smote_mlp_model.joblib')
+best_rf_model = joblib.load('./models/best_rf_model.joblib')
+
+# Load scaler
+smote_scaler = joblib.load('./models/smote_scaler.joblib')
+
+# Load selected features
+selected_features = joblib.load('./models/selected_features.joblib')
+
+# Sử dụng cho dữ liệu mới:
+def predict_diabetes(new_data):
+    # Chọn features
+    X = new_data[selected_features]
+    
+    # Chuẩn hóa dữ liệu
+    X_scaled = smote_scaler.transform(X)
+    
+    # Dự đoán với các models
+    rf_pred = smote_rf_model.predict(X_scaled)
+    knn_pred = smote_knn_model.predict(X_scaled)
+    mlp_pred = smote_mlp_model.predict(X_scaled)
+    best_rf_pred = best_rf_model.predict(X_scaled)
+    
+    return {
+        'SMOTE RF': rf_pred,
+        'SMOTE KNN': knn_pred,
+        'SMOTE MLP': mlp_pred,
+        'Best RF': best_rf_pred
+    }
+'''
