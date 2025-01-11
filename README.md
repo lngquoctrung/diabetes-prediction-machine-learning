@@ -223,21 +223,21 @@ gantt
       Kiểm tra                          :a3, after a2, 2d
 
    section Tìm hiểu yêu cầu
-      Tìm thông tin                     :done, b1, 2025-01-01 16:00, 1d
-      Soạn nội dung                     :done, after b1, 10h
+      Tìm thông tin                     :b1, 2025-01-01 16:00, 1d
+      Soạn nội dung                     :after b1, 10h
 
    section Viết code
-      Tải dữ liệu                       :done, c1, 2025-01-03, 1h
-      Trực quan hóa                     :done, c2, after c1, 1d
-      Lựa chọn mô hình                  :done, c3, after c2, 1d
-      Huấn luyện mô hình và so sánh     :done, c4, after c3, 1d
-      Phân tích dữ liệu                 :done, c5, after c4, 1d
-      Cân bằng dữ liệu                  :done, c6, after c5, 1d
-      Huấn luyện mô hình và so sánh     :done, c7, after c6, 1d
-      Hyperparameter mô hình            :done, c8, after c7, 1d
+      Tải dữ liệu                       :c1, 2025-01-03, 1h
+      Trực quan hóa                     :c2, after c1, 1d
+      Lựa chọn mô hình                  :c3, after c2, 1d
+      Huấn luyện mô hình và so sánh     :c4, after c3, 1d
+      Phân tích dữ liệu                 :c5, after c4, 1d
+      Cân bằng dữ liệu                  :c6, after c5, 1d
+      Huấn luyện mô hình và so sánh     :c7, after c6, 1d
+      Hyperparameter mô hình            :c8, after c7, 1d
   section Kiểm tra
-      So sánh đánh giá của các mô hình  :done, d1, after c8, 1d
-      Trực quan hóa các so sánh         :done, d2, after d1, 1d
+      So sánh đánh giá của các mô hình  :d1, after c8, 1d
+      Trực quan hóa các so sánh         :d2, after d1, 1d
 ```
 
 ---
