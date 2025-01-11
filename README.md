@@ -218,9 +218,9 @@ gantt
       Hoàn thành dự án                  :milestone, m2, 2025-01-12, 0d
       
    section Thời gian dự kiến
-      Tìm hiểu yêu cầu                  :done, a1, 2025-01-01, 2d
-      Viết code                         :done, a2, after a1, 7d
-      Kiểm tra                          :done, a3, after a2, 2d
+      Tìm hiểu yêu cầu                  :a1, 2025-01-01, 2d
+      Viết code                         :a2, after a1, 7d
+      Kiểm tra                          :a3, after a2, 2d
 
    section Tìm hiểu yêu cầu
       Tìm thông tin                     :done, b1, 2025-01-01 16:00, 1d
