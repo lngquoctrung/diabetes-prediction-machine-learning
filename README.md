@@ -214,22 +214,30 @@ gantt
    todayMarker off
 
    section Tổng quan     
-      Nhận dự án              :milestone, m1, 2025-01-01, 0d
-      Giao dự án              :milestone, m2, 2025-01-12, 0d
+      Bắt đầu dự án                     :milestone, m1, 2025-01-01, 0d
+      Hoàn thành dự án                  :milestone, m2, 2025-01-12, 0d
       
    section Thời gian dự kiến
-      Tìm hiểu yêu cầu        :active, a1, 2025-01-01, 2d
-      Viết code               :a2, after a1, 7d
-      Kiểm tra                :a3, after a2, 2d
+      Tìm hiểu yêu cầu                  :done, a1, 2025-01-01, 2d
+      Viết code                         :done, a2, after a1, 7d
+      Kiểm tra                          :done, a3, after a2, 2d
 
    section Tìm hiểu yêu cầu
-      Tìm thông tin           :active, b1, 2025-01-01 16:00, 8h
-      Viết markdown           :after b1, 10h
+      Tìm thông tin                     :done, b1, 2025-01-01 16:00, 1d
+      Soạn nội dung                     :done, after b1, 10h
 
    section Viết code
-      Tải dữ liệu             :done, c1, 2025-01-03, 1h
-      Trực quan hóa           :active, c2, after c1, 6h
-      EDA                     :active, c3, after c1, 8h
+      Tải dữ liệu                       :done, c1, 2025-01-03, 1h
+      Trực quan hóa                     :done, c2, after c1, 1d
+      Lựa chọn mô hình                  :done, c3, after c2, 1d
+      Huấn luyện mô hình và so sánh     :done, c4, after c3, 1d
+      Phân tích dữ liệu                 :done, c5, after c4, 1d
+      Cân bằng dữ liệu                  :done, c6, after c5, 1d
+      Huấn luyện mô hình và so sánh     :done, c7, after c6, 1d
+      Hyperparameter mô hình            :done, c8, after c7, 1d
+  section Kiểm tra
+      So sánh đánh giá của các mô hình  :done, d1, after c8, 1d
+      Trực quan hóa các so sánh         :done, d2, after d1, 1d
 ```
 
 ---
